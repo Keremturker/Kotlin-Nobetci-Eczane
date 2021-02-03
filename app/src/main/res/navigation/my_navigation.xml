@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_navigation"
+    app:startDestination="@id/feedFragment">
+
+    <fragment
+        android:id="@+id/feedFragment"
+        android:name="com.keremturker.kotlineczane.view.FeedFragment"
+        android:label="fragment_feed"
+        tools:layout="@layout/fragment_feed">
+        <action
+            android:id="@+id/action_feedFragment_to_eczaneFragment"
+            app:destination="@id/eczaneFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/eczaneFragment"
+        android:name="com.keremturker.kotlineczane.view.EczaneFragment"
+        android:label="fragment_eczane"
+        tools:layout="@layout/fragment_eczane">
+        <action
+            android:id="@+id/action_eczaneFragment_to_feedFragment"
+            app:destination="@id/feedFragment" />
+        <argument
+            android:name="eczane"
+            app:argType="com.keremturker.kotlineczane.model.Eczane"
+            app:nullable="false" />
+
+
+    </fragment>
+</navigation>
